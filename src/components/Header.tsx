@@ -9,6 +9,8 @@ import {
 } from '../features/user/userSelectors';
 import { AppDispatch } from '../store/root';
 import { User } from '../features/user/userTypes';
+import { toast, Bounce } from 'react-toastify';
+import { Loading } from './Loading';
 
 export const Header = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -25,21 +27,35 @@ export const Header = () => {
         setUserData(user?.results?.[0]);
     }, [user]);
 
+    if (error) {
+        toast.error(error, {
+            position: 'top-right',
+            autoClose: 5000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            progress: undefined,
+            transition: Bounce,
+        });
+    }
+
     return (
-        <header className="w-full h-20 bg-[#2A57A5] flex justify-between items-center px-10">
-            <div className="h-full flex items-center">
-                <img src={logo} className="App-logo" alt="logo" />
-            </div>
-            <div className="h-full flex items-center gap-3">
-                <p className="text-white font-medium text-xl">
-                    {userData?.name?.first} {userData?.name?.last}
-                </p>
-                <img
-                    src={userData?.picture?.thumbnail ?? ''}
-                    className="rounded-full"
-                    alt="UserImage"
-                />
-            </div>
-        </header>
+        <React.Fragment>
+            {loading && <Loading />}
+            <header className="w-full h-[10%] bg-[#2A57A5] flex justify-between items-center px-10">
+                <div className="h-full flex items-center">
+                    <img src={logo} className="App-logo" alt="logo" />
+                </div>
+                <div className="h-full flex items-center gap-5">
+                    <p className="text-white font-medium text-lg">
+                        {userData?.name?.first} {userData?.name?.last}
+                    </p>
+                    <img
+                        src={userData?.picture?.thumbnail ?? ''}
+                        className="rounded-full"
+                        alt="UserImage"
+                    />
+                </div>
+            </header>
+        </React.Fragment>
     );
 };
