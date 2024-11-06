@@ -23,7 +23,7 @@ const renderWithStore = (store: any) => {
 };
 
 describe('Header Component', () => {
-    test('should renders user name and image when user data is available', async () => {
+    it('should renders user name and image when user data is available', async () => {
         const initialState = {
             user: {
                 data: {
@@ -53,7 +53,7 @@ describe('Header Component', () => {
         });
     });
 
-    test('should renders logo image', async () => {
+    it('should renders logo image', async () => {
         const initialState = {
             user: {
                 data: null,
@@ -74,7 +74,7 @@ describe('Header Component', () => {
         });
     });
 
-    test('should shows loading indicator when loading is true', async () => {
+    it('should shows loading indicator when loading is true', async () => {
         const initialState = {
             user: {
                 data: null,
@@ -91,7 +91,7 @@ describe('Header Component', () => {
         });
     });
 
-    test('should calls toast.error when there is an error', async () => {
+    it('should calls toast.error when there is an error', async () => {
         const initialState = {
             user: {
                 data: null,

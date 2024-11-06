@@ -20,12 +20,12 @@ describe('Counter component', () => {
         store = configureStore({ reducer: { counter: counterReducer } });
     });
 
-    test('should render with initial count', () => {
+    it('should render with initial count', () => {
         renderWithStore(store);
         expect(screen.getByText(/Counter: 0/i)).toBeInTheDocument();
     });
 
-    test('should increment the count', () => {
+    it('should increment the count', () => {
         renderWithStore(store);
         const addButton = screen.getByText(/Add/i);
 
@@ -33,7 +33,7 @@ describe('Counter component', () => {
         expect(screen.getByText(/Counter: 1/i)).toBeInTheDocument();
     });
 
-    test('should decrement the count', () => {
+    it('should decrement the count', () => {
         store.dispatch({ type: 'counter/increment' });
         renderWithStore(store);
 
@@ -42,7 +42,7 @@ describe('Counter component', () => {
         expect(screen.getByText(/Counter: 0/i)).toBeInTheDocument();
     });
 
-    test('should not decrement below 0', () => {
+    it('should not decrement below 0', () => {
         renderWithStore(store);
 
         const subtractButton = screen.getByText(/Subtract/i);
@@ -50,7 +50,7 @@ describe('Counter component', () => {
         expect(screen.getByText(/Counter: 0/i)).toBeInTheDocument();
     });
 
-    test('should reset the count', () => {
+    it('should reset the count', () => {
         store.dispatch({ type: 'counter/increment' });
         renderWithStore(store);
 
@@ -59,7 +59,7 @@ describe('Counter component', () => {
         expect(screen.getByText(/Counter: 0/i)).toBeInTheDocument();
     });
 
-    test('should disable buttons correctly when count is 0', () => {
+    it('should disable buttons correctly when count is 0', () => {
         renderWithStore(store);
 
         const subtractButton = screen.getByText(/Subtract/i);
@@ -69,7 +69,7 @@ describe('Counter component', () => {
         expect(resetButton).toBeDisabled();
     });
 
-    test('should enable buttons when count is above 0', () => {
+    it('should enable buttons when count is above 0', () => {
         store.dispatch({ type: 'counter/increment' });
         renderWithStore(store);
 

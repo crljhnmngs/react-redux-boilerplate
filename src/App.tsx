@@ -6,7 +6,7 @@ import { Counter } from './components/Counter';
 
 function App() {
     return (
-        <div className="h-screen w-screen">
+        <div role="main" className="h-screen w-screen">
             <Header />
             <Counter />
             <ToastContainer />
