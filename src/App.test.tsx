@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import App from './App';
 
-jest.mock('../components/Header', () => ({
+jest.mock('./components/Header', () => ({
     Header: () => <div>Header Component</div>,
 }));
 
-jest.mock('../components/Counter', () => ({
+jest.mock('./components/Counter', () => ({
     Counter: () => <div>Counter Component</div>,
 }));
 

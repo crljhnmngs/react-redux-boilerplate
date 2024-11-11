@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createMockStore } from '../../store/testUtils';
-import { Header } from '../../components/Header';
+import { Header } from '.';
 import { toast } from 'react-toastify';
 
 jest.mock('axios');

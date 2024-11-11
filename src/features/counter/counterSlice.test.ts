@@ -1,8 +1,4 @@
-import reducer, {
-    increment,
-    decrement,
-    reset,
-} from '../../../features/counter/counterSlice';
+import reducer, { increment, decrement, reset } from './counterSlice';
 
 describe('counterSlice', () => {
     it('should increase the count', () => {

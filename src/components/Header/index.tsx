@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../assets/icons/logo.png';
+import logo from '../../assets/icons/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser } from '../features/user/userThunks';
+import { fetchUser } from '../../features/user/userThunks';
 import {
     selectUser,
     selectUserLoading,
     selectUserError,
-} from '../features/user/userSelectors';
-import { AppDispatch } from '../store/root';
-import { User } from '../features/user/userTypes';
+} from '../../features/user/userSelectors';
+import { AppDispatch } from '../../store/root';
+import { User } from '../../features/user/userTypes';
 import { toast, Bounce } from 'react-toastify';
-import { Loading } from './Loading';
+import { Loading } from '../Loading';
 
 export const Header = () => {
     const dispatch = useDispatch<AppDispatch>();

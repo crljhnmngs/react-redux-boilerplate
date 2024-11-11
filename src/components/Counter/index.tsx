@@ -1,8 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset } from '../features/counter/counterSlice';
-import { selectCounter } from '../features/counter/counterSelectors';
-import { AppDispatch } from '../store/root';
+import {
+    increment,
+    decrement,
+    reset,
+} from '../../features/counter/counterSlice';
+import { selectCounter } from '../../features/counter/counterSelectors';
+import { AppDispatch } from '../../store/root';
 
 export const Counter = () => {
     const count = useSelector(selectCounter);

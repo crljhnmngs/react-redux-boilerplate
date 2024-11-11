@@ -1,5 +1,5 @@
-import store, { RootState } from '../../store/root';
-import { increment } from '../../features/counter/counterSlice';
+import store, { RootState } from './root';
+import { increment } from '../features/counter/counterSlice';
 
 describe('store', () => {
     it('should create the store with the correct initial state', () => {

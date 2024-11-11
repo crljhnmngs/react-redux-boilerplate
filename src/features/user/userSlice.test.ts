@@ -1,6 +1,6 @@
-import userReducer from '../../../features/user/userSlice';
-import { fetchUser } from '../../../features/user/userThunks';
-import { UserState } from '../../../features/user/userTypes';
+import userReducer from './userSlice';
+import { fetchUser } from './userThunks';
+import { UserState } from './userTypes';
 
 describe('userSlice', () => {
     const initialState: UserState = {

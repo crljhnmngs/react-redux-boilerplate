@@ -64,11 +64,19 @@
         "collectCoverage": true,
         "collectCoverageFrom": [
             "src/**/*.{ts,tsx,js,jsx}",
-            "!src/**/*.d.ts"
+            "!src/**/*Types.ts",
+            "!src/**/*.d.ts",
+            "!src/**/index.tsx",
+            "!src/**/reportWebVitals.ts"
         ],
         "moduleNameMapper": {
             "\\.(css|less)$": "identity-obj-proxy",
-            "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/fileMock.ts"
-        }
+            "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/fileMock.ts",
+            ".*Types$": "<rootDir>/__mocks__/typesMock.ts"
+        },
+        "coveragePathIgnorePatterns": [
+            "/Types/",
+            ".*Types.ts"
+        ]
     }
 }
