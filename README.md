@@ -1,6 +1,6 @@
 # Personal Frontend Boilerplate with React, Redux, TypeScript, & Tailwind CSS
 
-Ideal for creating React apps from the scratch.
+Ideal for creating React apps from scratch.
 
 ## Contains
 
@@ -10,6 +10,7 @@ Ideal for creating React apps from the scratch.
 -   [x] [Redux Toolkit](https://redux-toolkit.js.org/) v2.3.0
 -   [x] [React Router](https://reactrouter.com/en/main) v6.27.0
 -   [x] [Axios](https://axios-http.com/docs/intro) v1.7.7
+-   [x] [Jest](https://jestjs.io/) v27.5.1
 -   [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 
 ## Installation
